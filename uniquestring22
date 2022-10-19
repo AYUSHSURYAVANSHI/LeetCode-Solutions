@@ -1,0 +1,22 @@
+#include<bits/stdc++.h>
+using namespace std;
+int uniqueChar(string str){
+   int ans = -1;
+   unordered_map<char,int>mp;
+   for(int i=0;str[i]!='\0'){
+      mp[str[i]]++;
+   }
+   for(int i=0;i<s.size();i++){
+      for(auto it= mp.begin();it!=mp.end();it++){
+         if(it->first==str[i] && it->second==1){
+            ans= i;
+         }
+      }
+   }
+   return ans;
+}
+int main(){
+   string s= "tutorialspoint";
+   cout<<uniqueChar(s)<<endl;
+   return 0;
+}
